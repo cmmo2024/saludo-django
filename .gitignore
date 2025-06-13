@@ -1,0 +1,16 @@
+# Entorno virtual
+env/
+__pycache__
+*.pyc
+*.db
+*.sqlite3
+
+# Archivos de IDE (VSCode)
+.vscode/
+*.code-workspace
+
+# Configuración de Python
+*.log
+*.pot
+*.pyc
+__pycache__

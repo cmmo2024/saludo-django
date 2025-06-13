@@ -1,0 +1,34 @@
+{% extends "base/base.html" %}
+
+{% block titulo %}
+    Hola Django - {{ block.super }}
+{% endblock %}
+
+{% block contenido %}
+    <h2>¡Hola, {{ nombre }}!</h2>
+    <p>{{ mensaje }}</p>
+
+    <h3>Deja tu mensaje:</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar</button>
+    </form>
+
+    <hr>
+
+    <h3>Mensajes recientes:</h3>
+    {% if mensajes %}
+        <ul class="mensaje-lista">
+            {% for msg in mensajes %}
+                <li>
+                    <strong>{{ msg.nombre }}</strong>
+                    <p>{{ msg.texto }}</p>
+                    <small>{{ msg.fecha|date:"d/m/Y H:i" }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay mensajes aún.</p>
+    {% endif %}
+{% endblock %}

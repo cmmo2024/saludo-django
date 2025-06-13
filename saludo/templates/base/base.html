@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Mi Sitio Django{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Mi Proyecto Django</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'hola' %}">Inicio</a></li>
+                <li><a href="{% url 'acerca' %}">Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block contenido %}
+        <!-- Contenido por defecto -->
+        <p>Bienvenido a mi sitio.</p>
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Sitio</p>
+    </footer>
+</body>
+</html>
