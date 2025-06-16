@@ -6,9 +6,9 @@
 
 {% block contenido %}
     <h2>¡Hola, {{ nombre }}!</h2>
-    <p>{{ mensaje }}</p>
-
-    <h3>Deja tu mensaje:</h3>
+    <!-- <p>{{ mensaje }}</p> -->
+    <!-- -->
+    <h3>{{ mensaje }}</h3>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
